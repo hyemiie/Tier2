@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5f0efaaf.css",
+    "main.js": "/static/js/main.5aee0da8.js",
+    "static/js/787.a4b45000.chunk.js": "/static/js/787.a4b45000.chunk.js",
+    "static/media/vecteezy_modern-living-room-design-illustration-ai-generative_23902309.jpg": "/static/media/vecteezy_modern-living-room-design-illustration-ai-generative_23902309.32543f4529bfcac81053.jpg",
+    "static/media/Image8.png": "/static/media/Image8.6143dc7d52eb4c3316a4.png",
+    "static/media/cinsofa2.jpg": "/static/media/cinsofa2.665db45c4512f31bd180.jpg",
+    "static/media/bartlett2.jpg": "/static/media/bartlett2.811536894740a266f9bd.jpg",
+    "static/media/baker2.jpg": "/static/media/baker2.d346d005b3a533785ae0.jpg",
+    "index.html": "/index.html",
+    "main.5f0efaaf.css.map": "/static/css/main.5f0efaaf.css.map",
+    "main.5aee0da8.js.map": "/static/js/main.5aee0da8.js.map",
+    "787.a4b45000.chunk.js.map": "/static/js/787.a4b45000.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5f0efaaf.css",
+    "static/js/main.5aee0da8.js"
+  ]
+}
