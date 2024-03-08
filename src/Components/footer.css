@@ -1,0 +1,179 @@
+.footerGrid {
+  background-color: rgb(143, 119, 82);
+  /* height: 500px; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: absolute;
+  margin-bottom: 100%;
+}
+
+.footer-section h3 {
+  color: white;
+}
+
+.footerLogo {
+  color: white !important;
+}
+
+.Firstsection {
+}
+
+.footerLogo {
+  /* margin-top: 90px;
+  font-size: 30px; */
+  margin-left: 20px;
+  display: flex;
+}
+
+.footerLogo h1 {
+  font-size: 50px;
+  color: rgb(255, 221, 193) !important;
+}
+.footerLogo h3 {
+  color: rgb(255, 221, 193) !important;
+  margin-top: 45px;
+}
+
+.Firstsection {
+  margin-left: 10%;
+}
+
+.Firstsection p {
+  color: white !important;
+  margin-left: 20px;
+  line-height: 40px;
+  font-size: 17px;
+}
+
+.secSection {
+  color: white !important;
+}
+
+.thirdSection {
+  margin-left: 15%;
+}
+
+.fourthSection p {
+  color: white !important;
+}
+
+.fourthSection {
+  /* background-color: pink; */
+  border-style: double;
+  border-color: white;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+}
+
+.icon {
+  background-color: rgb(252, 252, 252);
+  width: 30px;
+}
+.showrooms {
+  font-size: 15px !important;
+  margin-top: 5px;
+  color: white !important;
+  list-style: disc;
+}
+
+.showrooms h3 {
+  font-size: 20px;
+}
+li {
+}
+
+.footerUL {
+  display: grid;
+  font-size: 20px;
+  color: white !important;
+}
+
+.footerUL li {
+  color: white !important;
+}
+
+.footerUL h3 {
+  color: white !important;
+
+  /* text-align: center; */
+}
+
+.footerUL li {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 2000px) {
+  * {
+    font-size: 16px !important;
+  }
+
+  .Firstsection {
+    /* margin-left: 12%; */
+  }
+
+  .Firstsection p {
+    margin-left: 20px;
+    line-height: 30px;
+  }
+
+  .footerGrid {
+    background-color: rgb(143, 119, 82);
+    /* height: 500px; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: absolute;
+    margin-bottom: 100%;
+  }
+
+  .fourthSection {
+    /* background-color: pink; */
+    border-style: double;
+    border-color: white;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  * {
+    font-size: 15px !important;
+  }
+
+  .Firstsection {
+    margin-left: 10%;
+  }
+
+  .Firstsection p {
+    color: white !important;
+    margin-left: 20px;
+    line-height: 20px;
+  }
+
+  .footerGrid {
+    background-color: rgb(143, 119, 82);
+    /* height: 500px; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: absolute;
+    margin-bottom: 100%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  * {
+    font-size: 13px !important;
+  }
+
+  .Firstsection {
+    margin-left: 8%;
+  }
+
+  .Firstsection p {
+    color: white !important;
+    margin-left: 20px;
+    line-height: 10px;
+  }
+}

@@ -1,0 +1,86 @@
+* {
+  padding: 0;
+  color: rgb(155, 119, 73) !important;
+}
+
+.navbar {
+  /* background-color: rgb(255, 250, 241); */
+  background-color: white;
+  height: 100px;
+  display: flex;
+  position: fixed;
+  top: 0; /* Stick to the top */
+  width: 100%; /* Ensure full width */
+  z-index: 1000; /* Ensure it's above other content */
+  color: rgb(155, 119, 73);
+}
+
+.prod {
+  margin-left: 30px;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 55px;
+  margin-left: -50px;
+  width: 500px;
+}
+
+.logo {
+  font-size: 40px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-left: 50px;
+  width: 100px;
+  margin-top: 40px;
+}
+
+.Mbuttons {
+  margin-top: 20px;
+  height: 30px;
+  margin-left: auto;
+  margin-top: 45px;
+}
+
+.NButtons {
+  width: 90px;
+  height: 50px;
+  padding: 10px;
+  margin-left: 20px;
+  margin-top: -60px;
+  border-radius: 10px;
+  /* background-color: rgb(92, 131, 87); */
+}
+
+.a {
+  color: rgb(62, 126, 56);
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-decoration: none;
+}
+.NButtons:hover {
+  background-color: rgb(150, 158, 149);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.btnLink {
+  color: rgb(62, 126, 56);
+  font-size: 12px;
+}
+
+.btnLink :hover {
+  text-decoration: none;
+  color: rgb(255, 254, 252);
+  font-size: 1;
+}

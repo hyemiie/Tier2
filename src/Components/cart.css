@@ -1,0 +1,69 @@
+* {
+  padding: 0;
+}
+
+.BDY {
+}
+
+.cartBody {
+  display: flex;
+  margin-top: 50px;
+}
+
+.productContainer {
+  border: 1px solid #ddd;
+  width: 70vw;
+}
+
+.CproductCard {
+  display: flex;
+  align-items: center;
+}
+
+.productImage {
+  width: 170px;
+}
+
+.CproductName {
+  margin-left: 60px;
+}
+
+.CproductDesc {
+  margin-left: 60px;
+}
+
+.CproductPrice {
+  margin-left: 60px;
+}
+
+.CproductQuantity {
+  margin-left: 60px;
+}
+
+.Total {
+  margin-left: 60px;
+}
+
+.BTN {
+  margin-left: 60px;
+  height: 50px;
+  width: 120px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  color: antiquewhite;
+  background-color: rgb(126, 122, 117);
+}
+
+.Summary {
+  background-color: rgb(80, 76, 76);
+  margin-left: 20px;
+  color: #ddd;
+  width: 400px;
+  font-size: 30px;
+}
+
+.OverallTotal {
+  margin-left: 220px;
+  margin-top: 50px;
+}
