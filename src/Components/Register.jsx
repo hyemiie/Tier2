@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
-import "./Registeration.css";
+import "./Login.css";
+import Footer from "./Footer";
 
 function Register() {
   const [password, setPassword] = useState("");
@@ -18,6 +19,7 @@ function Register() {
       .post("http://localhost:5000/register", data)
       .then(() => {
         console.log("User Registered");
+        alert("Registeration Successful");
         // Update UI with success message, if needed
       })
       .catch((error) => {
@@ -41,37 +43,60 @@ function Register() {
   };
 
   return (
-    <div className="registerForm">
-      <form method="post">
-        <label for="username">Username:</label>
-        <input
-          type="text"
-          name="username"
-          required
-          value={username}
-          onChange={handleUsernameChange}
-        />
-        <label for="password">Password:</label>
-        <input
-          type="password"
-          name="password"
-          required
-          value={password}
-          onChange={handlePasswordChange}
-        />
-
-        <label for="password">Email:</label>
-        <input
-          type="email"
-          name="email"
-          required
-          value={email}
-          onChange={handleEmailChange}
-        />
-        <button type="submit" onClick={handleRegisteration}>
-          Login
-        </button>
-      </form>
+    <div className="contactUs">
+      <div className="contactForm">
+        <div className="contactFormHalf">
+          <h2>Welcome!!!</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <br /> Quisquam veniam odio nulla laborum numquam
+            <br /> nihil iure expedita et aliquid explicabo!
+          </p>
+        </div>
+        <div className="contactDiv">
+          <form method="post" className="contactSpan">
+            <span className="label">
+              <input
+                type="text"
+                id=""
+                placeholder="Name"
+                name="username"
+                required
+                value={username}
+                onChange={handleUsernameChange}
+                className="username"
+              />
+            </span>
+            <span className="label">
+              <input
+                type="text"
+                id=""
+                placeholder="Your email"
+                className="username"
+              />
+            </span>
+            <span className="label">
+              <input
+                type="password"
+                required
+                className="contactInput password"
+                placeholder="Your Password"
+                name="password"
+                value={password}
+                onChange={handlePasswordChange}
+              />
+            </span>
+          </form>
+          <button
+            type="submit"
+            className="contactBtn"
+            onClick={handleRegisteration}
+          >
+            Register{" "}
+          </button>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 }

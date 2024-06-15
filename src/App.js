@@ -10,6 +10,10 @@ import Navbar from "./Components/navbar";
 import About from "./Components/About";
 import "./Main.css";
 import Register from "./Components/Register";
+import Search from "./Components/Search";
+import Contact from "./Components/Contact";
+import Profile from "./Components/Profile";
+import Main from "./component/Main";
 
 function App() {
   const location = useLocation();
@@ -23,7 +27,7 @@ function App() {
           path="/"
           element={
             <div className={`main ${isHome ? "main1" : ""}`}>
-              <Home />
+              <Main />
             </div>
           }
         />
@@ -33,6 +37,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/profile" element={<Profile />} />
         {/* Add more routes for other components/pages */}
       </Routes>
     </div>

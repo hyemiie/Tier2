@@ -1,139 +1,31 @@
-.About {
-  background-color: rgb(255, 255, 255);
+.all{
+}
+
+.About{
   display: flex;
-  /* height: 100vh; */
+  width: 100%;
+  padding-top: 30px;
 }
 
-.firstSection {
-  width: 500px;
-  margin-left: 15%;
-  color: rgb(155, 119, 73);
-  margin-top: 100px;
-  /* margin-top: 90px; */
-}
-
-.Span {
+.About2{
   display: flex;
-  margin-top: 30px;
+  width: 100%;
+  flex-direction: row-reverse;
 }
 
-.secondSection {
-  width: 500px;
-  height: 40vh;
-  display: grid;
-  margin-left: 2%;
-  color: rgb(155, 119, 73);
-  margin-top: 150px;
-  /* background-color: aqua; */
+.secondSection{
+  width: 70%;
+  padding: 100px;
 }
 
-.Exclusive {
-  width: 500px;
-  text-align: left;
-  background-color: aqua;
+.SSpan{
+  width: 30px ;
+  height: 70%;
+  padding-left: 30px;
 }
 
-h3 {
-  /* color: blueviolet; */
-  margin-bottom: 0px;
-  margin-left: 0px;
+.aboutImage{
+  width: 40%;
+  padding: 30px;
 }
 
-.SSpan {
-  margin-bottom: 40px;
-}
-
-.aboutImage {
-  background-color: rgb(175, 99, 99);
-  margin-top: 50px;
-  width: 640px;
-  height: 600px;
-  margin-left: 20px;
-}
-
-@media screen and (max-width: 2000px) {
-  * {
-    font-size: 16px !important;
-  }
-
-  .firstSection {
-    margin-left: 12%;
-  }
-
-  .Firstsection p {
-    color: white !important;
-    margin-left: 20px;
-    line-height: 30px;
-  }
-
-  .aboutImage {
-    background-color: rgb(175, 99, 99);
-    margin-top: 50px;
-    width: 540px;
-    height: 500px;
-    margin-left: 15px;
-  }
-}
-
-@media screen and (max-width: 1500px) {
-  * {
-    font-size: 15px !important;
-  }
-
-  .firstSection {
-    /* margin-left: 10%; */
-  }
-
-  .Firstsection p {
-    color: white !important;
-    margin-left: 20px;
-    line-height: 20px;
-  }
-
-  .aboutImage {
-    background-color: rgb(175, 99, 99);
-    margin-top: 50px;
-    width: 440px;
-    height: 400px;
-    margin-left: 12px;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  * {
-    font-size: 18px !important;
-    /* text-align: center !important; */
-  }
-
-  .firstSection {
-    margin-right: auto;
-  }
-
-  .Firstsection p {
-    color: white !important;
-    line-height: 10px;
-  }
-
-  .About {
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .secondSection {
-    width: 500px;
-    height: 20vh;
-    display: flex;
-    color: rgb(155, 119, 73);
-    margin-top: 40px;
-  }
-
-  .aboutImage {
-    margin-top: -5px;
-    width: 340px;
-    height: 300px;
-    margin-left: auto;
-    padding-top: 1px;
-  }
-}

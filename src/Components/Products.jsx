@@ -1,10 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./product.css";
+import tableImage from "./wooden.png";
+import Drawers from "./Drawers";
+import { useTrail } from "react-spring";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faShoppingCart,
+  faMagnifyingGlass,
+  faBars,
+  faArrowLeft,
+} from "@fortawesome/free-solid-svg-icons";
+import "./navbar.css";
 
 function Products() {
-  const [products, setProducts] = useState([]);
+  var [products, setProducts] = useState([]);
+  const [drawers, setDrawers] = useState([]);
   const [quantities, setQuantities] = useState({}); // Use an object to store individual quantities
+  const [searchInput, setSearchInput] = useState("");
+  const [searchResult, setSearchResult] = useState({});
 
   useEffect(() => {
     const getAPIData = async () => {
@@ -57,10 +71,11 @@ function Products() {
 
       .then(() => {
         console.log("Product added to cart");
-        // Update UI with success message, if needed
+        alert("Product added");
       })
       .catch((error) => {
         console.error(error);
+        alert(error);
       });
   };
 
@@ -84,17 +99,152 @@ function Products() {
       });
   };
 
-  return (
-    <div>
-      {/* <div className="heading">
-        <span className="design">Hi </span>
-        <h2 className="companyName">Limi</h2>
-        <span className="box">HI </span>
-      </div> */}
+  // const filterBySection = (data, section) => {
+  //   return data.filter((item) => item.product_desc === section);
+  // };
 
+  // const chairs = filterBySection(productList, "Drawer"); // Change 'Living Room' to 'Chairs' for chair section
+
+  // console.log(chairs);
+  const showDrawers = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/products");
+      const productList = response.data.products;
+
+      const filterBySection = (data, section) => {
+        return data.filter((item) => item.product_desc === section);
+      };
+
+      const drawers = filterBySection(productList, "Drawer");
+      setDrawers(drawers);
+      console.log("drawers", drawers);
+
+      if (drawers.length > 0) {
+        setProducts(drawers);
+        console.log("No", products);
+      } else {
+        setProducts(productList);
+        console.log("yes", products);
+      }
+
+      const initialQuantities = {};
+      products.forEach((product) => {
+        initialQuantities[product.product_ID] = 0;
+      });
+      setQuantities(initialQuantities);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const showChairs = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/products");
+      const productList = response.data.products;
+
+      const filterBySection = (data, section) => {
+        return data.filter((item) => item.product_desc === section);
+      };
+
+      const chairs = filterBySection(productList, "Chair");
+      setDrawers(chairs);
+      console.log("drawers", drawers);
+
+      if (drawers.length > 0) {
+        setProducts(drawers);
+        console.log("No", products);
+      } else {
+        setProducts(productList);
+        console.log("yes", products);
+      }
+
+      const initialQuantities = {};
+      products.forEach((product) => {
+        initialQuantities[product.product_ID] = 0;
+      });
+      setQuantities(initialQuantities);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const showDesks = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/products");
+      const productList = response.data.products;
+
+      const filterBySection = (data, section) => {
+        return data.filter((item) => item.product_desc === section);
+      };
+
+      const chairs = filterBySection(productList, "Desk");
+      setDrawers(chairs);
+      console.log("drawers", drawers);
+
+      if (drawers.length > 0) {
+        setProducts(drawers);
+        console.log("No", products);
+      } else {
+        setProducts(productList);
+        console.log("yes", products);
+      }
+
+      const initialQuantities = {};
+      products.forEach((product) => {
+        initialQuantities[product.product_ID] = 0;
+      });
+      setQuantities(initialQuantities);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const input = (e) => {
+    setSearchInput(e.target.value);
+    console.log(searchInput);
+  };
+
+  const seearchFunction = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/products");
+      const productList = response.data.products;
+
+      const filterBySection = (data, section) => {
+        return data.filter((item) => item.product_name.includes(section));
+      };
+
+      const chairs = filterBySection(productList, searchInput);
+      console.log("searchInput", searchInput);
+      setSearchResult(chairs);
+      console.log("searchResult", chairs);
+
+      // setProducts(chairs);
+      // console.log("No", products);
+
+      if (chairs.length > 0) {
+        setProducts(chairs);
+        console.log("Products", products);
+      } else {
+        setProducts(productList);
+        console.log("No products", products);
+        // alert("Sorry, seems like thats not in stock");
+      }
+
+      const initialQuantities = {};
+      products.forEach((product) => {
+        initialQuantities[product.product_ID] = 0;
+      });
+      setQuantities(initialQuantities);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  return (
+    <div className="productBody">
       <div className="seconddivision">
-        <h4>Products</h4>
-        <input type="search" name="" id="search" placeholder="Search..." />
+        <h4>Tier/ Products</h4>
+        {/* <input type="search" name="" id="search" placeholder="Search..." /> */}
       </div>
 
       <div className="mainHalf">
@@ -102,13 +252,52 @@ function Products() {
           {/* <span className="sort"> SORT</span> */}
 
           <div className="filter">
-            <h3>CHOOSE CATEGORY</h3>
+            <div className="inputProduct">
+              <input
+                type="text"
+                name=""
+                id="searchProducts"
+                onChangeCapture={input}
+                onChange={seearchFunction}
+              />
+              <button className="inputSearch">
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlass}
+                  onClick={seearchFunction}
+                />
+              </button>
+            </div>
+
+            <h3 className="productTitle">Product Categories</h3>
+            <span className="divider"></span>
             <span className="buttons">
-              <button className="btn">Table</button>
-              <button className="btn">Chairs</button>
-              <button className="btn">Desks</button>
-              <button className="btn">Lamps</button>
-              <button className="btn">Beenie bag</button>
+              <p>
+                <button className="btn tableImage"></button>
+                <h3 id="productTag">Tables</h3>
+              </p>
+              <p>
+                {" "}
+                <button
+                  className="btn chairImage "
+                  onClick={showChairs}
+                ></button>
+                <h3 id="productTag">Chairs</h3>
+              </p>
+              <p>
+                <button className="btn deskImage" onClick={showDesks}></button>
+                <h3 id="productTag">Desks</h3>
+              </p>
+              <p>
+                <button
+                  className="btn lampImage"
+                  onClick={showDrawers}
+                ></button>
+                <h3 id="productTag">Lamps</h3>
+              </p>
+              <p>
+                <button className="btn SideDrawerImage"></button>{" "}
+                <h3 id="productTag">Side Tables</h3>
+              </p>
             </span>
           </div>
         </div>
@@ -116,27 +305,29 @@ function Products() {
         <div className="productContainer">
           {products.map((product) => (
             <div key={product.product_ID} className="productCard">
-              <div className="productName">{product.product_name}</div>
-              <div className="productDesc">{product.product_desc}</div>
-              <span className="productImage">
+              <div className="productImage">
                 <img
                   src={`http://localhost:5000${product.product_image}`}
                   alt=""
                   className="PImage"
                 />
-              </span>
-              <div className="productPrice">{product.product_price}</div>
-              <input
-                type="number"
-                name="Quantity"
-                id={`Quantity_${product.product_ID}`}
-                value={quantities[product.product_ID]}
-                onChange={(event) => handleChange(event, product.product_ID)}
-                min={0}
-                max={10}
-                className="qty"
-              />
-              <div>
+              </div>
+              {/* <div className="productDesc">{product.product_desc}</div> */}
+
+              <div className="productDetails">
+                <div className="productName">{product.product_name}</div>
+
+                <div className="productPrice">${product.product_price}</div>
+                <input
+                  type="number"
+                  name="Quantity"
+                  id={`Quantity_${product.product_ID}`}
+                  value={quantities[product.product_ID]}
+                  onChange={(event) => handleChange(event, product.product_ID)}
+                  min={0}
+                  max={10}
+                  className="qty"
+                />
                 <button
                   onClick={() => handleAddToCart(product)}
                   className="add"
@@ -146,6 +337,7 @@ function Products() {
               </div>
             </div>
           ))}
+          <Drawers />
         </div>
       </div>
     </div>

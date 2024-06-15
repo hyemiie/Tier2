@@ -1,11 +1,11 @@
 import React from "react";
-import Image1 from "../Images/products/beds/bartlett2.jpg";
+import Image1 from "./thumbs/lamp.png";
 import Image2 from "../Images/vecteezy_modern-living-room-design-illustration-ai-generative_23902309.jpg";
-import Image3 from "../Images/products/bedsidetables/baker2.jpg";
-import Image4 from "../Images/products/sofas/cinsofa2.jpg";
-import Image5 from "../Images/products/thumlime/armchair.jpg";
-import Image6 from "../Images/products/thumlime/chestofdrawers.jpg";
-import Image7 from "../Images/products/thumlime/centretables.jpg";
+import Image3 from "./thumbs/triangle-wooden-table-on-white-background-close-up-PKFQZSQ-pd1o8lv0mhp9e9ih6kubtjqsawxilc5p1xqo6vlwy8.png";
+import Image4 from "./thumbs/nightstand.png";
+import Image5 from "./09/armchair-isolated-on-white-background-3d-rendering-P9MJ7CJ-300x300.png";
+import Image6 from "./09/three-seats-cozy-grey-sofa-PU2KRQE-300x300.png";
+import Image7 from "./09/wooden-table-on-white-background-P6CQMJC-300x300.png";
 
 function Categories() {
   return (

@@ -1,4 +1,11 @@
-.loginForm {
-  background-color: brown;
-  margin-top: 10%;
+.username {
+  height: 50px;
+  font-size: 20px;
+  width: 80%;
+  margin-bottom: 3%;
+  /* margin-top: 3%; */
+}
+
+.password {
+  margin-top: 0% !important;
 }

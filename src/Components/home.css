@@ -1,76 +1,131 @@
 .home {
   display: flex;
   width: 100%;
-  background-color: rgb(255, 255, 255);
   height: 100vh;
-  margin-top: 60px;
-}
-
-.heroImage {
-  height: 85%;
 }
 
 .heroImageContainer {
+  width: 100%;
+  background-image: url("../Images/Images/darkModeBackground.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
-.tiny {
-  margin-top: 150px;
-  font-weight: lighter;
+.homeSection {
+  display: flex;
+  background-color: #2b2a31;
+  height: 100vh;
+  width: 100%;
 }
-.span {
-  /* height: 400px; */
-  margin-left: -1%;
+
+.mainBackground {
+  background-color: #2b2a31;
   width: 40%;
 }
 
-.MSG {
-  margin-top: 5px;
-}
-.message {
-  font-size: 60px;
-  margin-top: 30px;
-  color: rgb(23, 24, 24);
-  font-weight: lighter;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+.pageNumber {
+  color: #3a3940;
+  font-size: 22rem;
+  position: relative;
+  left: -2rem;
+  top: -6rem;
 }
 
-.Smessage {
-  width: 500px;
-  margin-top: 2px;
-  font-weight: lighter;
+.heroTextContainer {
+  position: relative;
+  z-index: 10;
+  top: -33rem;
+  width: 80%;
+  left: 10rem;
+  text-align: left;
+  display: flex;
 }
 
-.button {
-  width: 250px;
-  height: 60px;
-  background-color: rgb(92, 131, 87);
-  border-radius: 10px;
-  border: none;
-  font-size: 20px;
+.heroText {
+  width: 40%;
+  color: white;
+}
+
+.heroText h4 {
+  color: burlywood;
+  margin-left: auto;
+}
+
+.heroText h2 {
+  font-size: 4rem;
+  margin-top: 10px;
+}
+
+.heroText p {
+  margin-top: -2rem;
+}
+
+.heroText button {
+  background-color: transparent;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-color: white;
+  height: 40px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: white;
+}
+
+.heroProduct {
+  margin-left: auto;
+  width: 25%;
+  background-color: #2b2a31;
+}
+
+.heroProductTexts {
+  margin-top: auto;
+}
+
+.heroProductImg {
+  height: 60%;
+  background-image: url(../Images/products/sofas/dukesofa2.jpg);
+  background-size: contain;
+}
+
+.heroProductName {
+  color: white;
+  font-size: 17px;
   font-weight: bold;
-  color: rgb(199, 204, 209) !important;
+  margin-top: 20px;
+  position: relative;
+  padding-left: 20px;
 }
 
-.button:hover {
-  background-color: rgb(125, 130, 134);
-  color: antiquewhite;
+.heroProductPrice {
+  font-weight: lighter;
+  color: white;
+  padding-left: 20px;
 }
 
-.Light {
-  margin-left: 1185px;
-  margin-top: 230px;
-  background-color: aqua;
-  padding: 0;
+.heroProductBtn {
+  color: black;
+  width: 130px;
+  height: 40px;
+  margin-left: 20px;
 }
 
+.heroProductTexts button :hover {
+  background-color: rgb(236, 170, 70);
+  color: #d41717;
+}
+
+.CTAicon {
+  color: black;
+  font-size: 15px;
+  margin-left: auto;
+  padding-left: 2px;
+}
 .categories {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
-  /* background-color: rgb(255, 250, 241); */
-
-  height: 100vh;
+  background-color: #ffffff;
+  padding-bottom: 100px;
 }
 
 .img-responsive {
@@ -80,13 +135,13 @@
 .categoryMessage {
   font-size: 40px;
   text-align: center;
-  color: rgb(114, 65, 0);
+  color: rgb(42, 40, 40);
 }
 
 .catImages {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 40px;
+  /* margin-top: 40px; */
   width: 100%;
 }
 .c {
@@ -96,7 +151,6 @@
 }
 
 .aboutPage {
-  /* margin-top: 150px; */
 }
 
 .category-title {
@@ -104,7 +158,7 @@
   font-size: 22px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: lighter;
-  color: rgb(114, 65, 0);
+  color: rgb(56, 53, 53);
   text-decoration: dotted;
 }
 
@@ -112,128 +166,5 @@
   text-decoration: none;
 }
 
-@media screen and (max-width: 2000px) {
-  .heroImage {
-    height: 80%;
-  }
-
-  .span {
-    /* height: 400px; */
-    margin-left: -1%;
-    width: 10%;
-  }
-
-  .img-responsive {
-    width: 90%;
-  }
-}
-
-@media screen and (max-width: 1700px) {
-  .heroImage {
-    height: 70%;
-  }
-
-  .Smessage {
-    width: 300px;
-    margin-top: 2px;
-    font-weight: lighter;
-  }
-
-  .img-responsive {
-    width: 90%;
-  }
-}
-
-@media screen and (max-width: 1500px) {
-  .heroImage {
-    height: 60%;
-  }
-}
-
-@media screen and (max-width: 1300px) {
-  .heroImage {
-    height: 50%;
-  }
-
-  .img-responsive {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .catImages {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 20px;
-    width: 80%;
-  }
-
-  .c {
-    /* margin-left: 50px; */
-    margin-top: 10px;
-    margin-left: 50%;
-    /* align-items: center;
-    justify-self: center; */
-    /* padding-left: 280px; */
-  }
-
-  .heroImage {
-    height: 40%;
-  }
-
-  .img-responsive {
-    width: 90%;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .catImages {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 20px;
-    width: 80%;
-  }
-
-  .c {
-    /* margin-left: 50px; */
-    margin-top: 10px;
-    margin-left: 50%;
-    /* align-items: center;
-    justify-self: center; */
-    /* padding-left: 280px; */
-  }
-
-  .heroImage {
-    height: 30%;
-  }
-
-  .img-responsive {
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .catImages {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 20px;
-    width: 80%;
-  }
-
-  .c {
-    /* margin-left: 50px; */
-    margin-top: 10px;
-    margin-left: 50%;
-    /* align-items: center;
-    justify-self: center; */
-    /* padding-left: 280px; */
-  }
-
-  .heroImage {
-    height: 20%;
-  }
-
-  .img-responsive {
-    width: 70%;
-  }
+.heroImageContainer {
 }

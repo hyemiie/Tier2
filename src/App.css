@@ -1,5 +1,4 @@
-* {
-  /* background-image: url(./Images/Image2.jpg); */
+/* * {
 }
 
 .productContainer {
@@ -7,7 +6,6 @@
 }
 
 .productCard {
-  /* background-color: aquamarine; */
   margin-top: 40px;
   margin-left: 40px;
   width: 300px;
@@ -44,7 +42,7 @@
   width: 45px;
   font-size: 15px;
   background-color: rgb(65, 63, 62);
-  color: blanchedalmond;
+  color: rgb(189, 120, 18);
 }
 
 .add {
@@ -54,4 +52,4 @@
   color: black;
   border-radius: 10px;
   font-weight: bold;
-}
+} */
