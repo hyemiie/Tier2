@@ -1,31 +1,56 @@
-.all{
+.all {
 }
 
-.About{
+.About {
   display: flex;
   width: 100%;
   padding-top: 30px;
 }
 
-.About2{
+.About2 {
   display: flex;
   width: 100%;
   flex-direction: row-reverse;
 }
 
-.secondSection{
+.secondSection {
   width: 70%;
   padding: 100px;
 }
 
-.SSpan{
-  width: 30px ;
+.SSpan {
+  width: 30px;
   height: 70%;
   padding-left: 30px;
 }
 
-.aboutImage{
-  width: 40%;
+.aboutImage {
+  width: 60%;
   padding: 30px;
+  z-index: 1;
+  background-color: transparent
+
+
+}
+
+
+
+.aboutImg {
+  background-color: rgb(242, 228, 228);
+  width: 80%;
+  margin-top: -20%;
+  height: 200px;
+  /* position: fixed; */
+  
+ }
+
+.imgDiv{
+  /* background-color: rgb(212, 201, 212); */
+  width: 30%;
+  display: flex;
+  align-items: center;
+  
+  flex-direction: column;
+  
 }
 

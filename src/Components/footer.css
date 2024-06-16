@@ -1,41 +1,40 @@
 .footerGrid {
-  background-color: #121213;
+  background-color: rgb(222, 209, 187);
   display: flex;
-  width: 90%;
-  /* border-top: 1px solid rgb(190, 183, 183); */
-  height: 100%;
-}
-
-.footer {
-  height: 30vh;
-  /* width: 100%; */
-  /* background-color: #2b2a31; */
-  background-color: #121213;
-
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  border-top: 1px solid black;
 }
+
+
 .Firstsection {
   width: 30%;
-  margin-top: 2%;
+  /* margin-top: 20%; */
 }
 
 .Firstsection h1 {
   color: white;
   font-size: 30px;
-  margin-left: 2%;
+  /* margin-top: -100px; */
+
+}
+
+.footLink{
+  color: rgb(124, 114, 114);
+  text-decoration: none;
 }
 
 .secSection {
   color: white;
-  width: 25%;
-  margin-top: 2%;
+  height: fit-content;
+  display: flex;
+  margin-bottom: 2%;
 }
 
-.secSection li {
-}
+
 
 .fourthSection p {
   color: white;
@@ -44,7 +43,7 @@
 .fourthSection {
   margin-left: 20%;
   color: white;
-  margin-top: 2%;
+  margin-bottom: 30px;
 }
 
 .fourthSection h3 {
@@ -69,8 +68,8 @@
 }
 
 .footerUL {
-  height: 80%;
   display: grid;
+  margin-bottom: 30px;
 }
 
 .footerUL h3 {
@@ -80,7 +79,6 @@
 
 .footerIcons {
   display: flex;
-  margin-top: -15px;
 }
 
 .footIcon {

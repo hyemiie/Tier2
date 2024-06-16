@@ -34,31 +34,31 @@ function Footer() {
             <h3>Useful Links</h3>
             <li>
               {" "}
-              <Link to="/" className="prod">
+              <Link to="/" className="footLink">
                 Home
               </Link>
             </li>
             <li>
               {" "}
-              <Link to="/about" className="prod">
+              <Link to="/about" className="footLink">
                 About Us
               </Link>
             </li>
             <li>
               {" "}
-              <Link to="/products" className="prod">
+              <Link to="/products" className="footLink">
                 Products
               </Link>
             </li>{" "}
             <li>
               {" "}
-              <Link to="/" className="prod">
+              <Link to="/" className="footLink">
                 Careers
               </Link>
             </li>{" "}
             <li>
               {" "}
-              <Link to="/contact" className="prod">
+              <Link to="/contact" className="footLink">
                 Contact Us
               </Link>
             </li>{" "}

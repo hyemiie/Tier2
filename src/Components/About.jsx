@@ -1,7 +1,7 @@
 import React from "react";
 import "./About.css";
 import AbouImage from "../Images/Images/aboutImage.webp";
-// react-app\src\Images\products\chestofdrawers\baker2.jpg
+import AboutImage from "../Images/Images/about5.jpeg"
 import { useSpring, animated } from "react-spring";
 function About() {
   const SlideIn = useSpring({
@@ -46,13 +46,16 @@ function About() {
           </span>
          
         </div>
-        {/* <div className="aboutImg"> */}
+        {/* <div className="imgDiv">  */}
         <animated.img
-          src={AbouImage}
+          src={AboutImage}
           alt=""
           className="aboutImage"
           style={SlideIn}
         />
+                {/* <div className="aboutImg"> */}
+g
+        {/* </div> */}
         {/* </div> */}
       </div>
     </div>
