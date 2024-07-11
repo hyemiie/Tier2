@@ -1,56 +1,79 @@
 .all {
+  padding-bottom: 100px;
 }
 
 .About {
   display: flex;
   width: 100%;
   padding-top: 30px;
+  /* height: fit-content; */
 }
 
-.About2 {
+.about2 {
   display: flex;
   width: 100%;
   flex-direction: row-reverse;
+
+  .secondSection {
+    padding: 100px;
+     width: 50%;
+     display: flex;
+     align-items:center;
+     justify-content:left;
+
+   }
+   
+
 }
 
 .secondSection {
-  width: 70%;
-  padding: 100px;
+ padding: 100px;
+ width: 50%;
+ display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.SSpan {
-  width: 30px;
-  height: 70%;
+.messageDiv {
   padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.imageDiv{
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .aboutImage {
   width: 60%;
-  padding: 30px;
-  z-index: 1;
-  background-color: transparent
+   z-index: 1;
+  }
+
+   .aboutGrid{
+    ul{
+       display: grid; 
+       grid-template-columns: repeat(2, 1fr); 
+      justify-content: space-between;
+      list-style:circle;
+
+    }
+   
 
 
-}
-
-
-
-.aboutImg {
-  background-color: rgb(242, 228, 228);
-  width: 80%;
-  margin-top: -20%;
-  height: 200px;
-  /* position: fixed; */
-  
- }
-
-.imgDiv{
-  /* background-color: rgb(212, 201, 212); */
-  width: 30%;
-  display: flex;
-  align-items: center;
-  
-  flex-direction: column;
-  
-}
-
+    li{
+      width: fit-content;
+      display: flex;
+      padding: 10px;
+      list-style:circle;
+    }
+    button{
+      width: fit-content;
+      background-color: black;
+      color: wheat;
+      border-radius: 10px;
+      padding: 5px;
+    }
+   }

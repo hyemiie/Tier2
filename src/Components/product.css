@@ -1,21 +1,25 @@
-.productBody {
-  /* padding: 0;
-  margin: 0; */
-  background-color: #2b2a31;
-  margin-top: -25px;
 
-  /* top: 0px; */
+
+.productBody {
+
+  /* background-color: rgb(209, 227, 227); */
+  background-color: rgb(255, 255, 255);
+  width: 100vw !important;
+  overflow:  hidden !important;
+
 }
 
 .cat {
-  width: 25%;
+  /* width:fit-content; */
   margin-top: 20px;
-  margin-left: 1%;
+  padding: 20px;
+  height: 100%;
+  /* position: absolute; */
 }
 
 .productTitle {
   font-size: 25px;
-  color: rgb(253, 246, 243);
+  color: rgb(53, 50, 49);
 }
 
 .divider {
@@ -26,52 +30,70 @@
 }
 
 #productTag {
-  color: rgb(255, 252, 251);
+  color: rgb(50, 50, 49);
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+#productTag:hover{
+  text-decoration: underline;
 }
 
 #searchProducts {
-  background-color: transparent;
-  width: 100%;
   height: 3rem;
-  color: whitesmoke;
+  width: 30%;
+  color: rgb(98, 93, 93);
   font-size: 20px;
-  border: 1px solid rgb(128, 112, 90);
+  border: 1px solid rgb(231, 227, 221);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  outline: none;
+  padding-left: 10px;
+  margin-left: 70%;
 }
+  
 
 .inputProduct {
   display: flex;
 }
 
 .inputSearch {
-  background-color: burlywood;
-  width: 20%;
+  background-color: rgb(205, 203, 201);
+  width: 40px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: 1px solid rgb(201, 200, 197);
+
 }
 
 .buttons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: 20%;
+  /* display: grid; */
+  margin-top: 20px;
+  display: flex;
+  margin-right: auto;
+  width: fit-content;
+
 }
 
 .buttons button {
-  margin-top: 15px;
-  width: 95%;
-  height: 150px;
-  color: rgb(255, 252, 251);
+  margin-left: 20px;
+  color: rgb(75, 72, 71);
   border: none;
+  font-weight: lighter !important;
 }
 
 .buttons button:hover {
   scale: 1.1;
+  background-color: purple;
 }
 
 .productName {
-  color: rgb(255, 255, 255);
+  color: rgb(64, 61, 61);
   font-weight: bold;
 }
 
 .productDesc {
-  color: white;
+  color: rgb(49, 48, 48);
   text-transform: capitalize;
   background-color: transparent;
 }
@@ -80,43 +102,59 @@
   align-items: center;
   justify-content: center;
   display: flex;
+  /* background-color: rgb(246, 246, 246); */
+  width: 90%;
+  height: 230px;
 }
 
 .PImage {
-  width: 80%;
-  height: 80%;
+  width: 130px;
+  height: 150px;
+
 }
 
 .productCard {
-  border-radius: 5px;
-  margin-left: 30px;
-  margin-top: 30px;
+  margin-top: 10px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: rgb(232, 221, 221); */
+  margin-left: 20px;
+  width: 200px;
 }
 
 .productCard:hover {
-  background-color: rgb(20, 19, 19);
+  background-color: rgb(248, 248, 248);
+  scale: 1.02;
 }
 
 .productContainer {
-  margin-top: 100px;
+  margin-bottom: 200px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-right: auto;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
 }
 
 .mainHalf {
+  flex-direction: column;
   display: flex;
-  flex-direction: row-reverse;
+  width: 100vw;
+ 
 }
 
 .productPrice {
-  background-color: transparent;
+  /* text-align: right; */
+  margin-top: 10px;
+  font-weight: lighter;
+  color: rgb(100, 99, 98);
+
 }
 
 .productDetails {
   padding-top: 2rem;
-  background-color: transparent;
-  color: white;
+  /* background-color: white; */
+  color: rgb(61, 57, 57);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -124,15 +162,16 @@
 }
 
 .productDetails input {
-  color: white;
+  color: rgb(76, 73, 73);
   background-color: transparent;
   margin-top: 10px;
   font-weight: bold;
   font-family: var(--e-global-typography-ce37b86-font-family), Sans-serif;
+  display: none;
 }
 
 .productDetails button {
-  color: white;
+  color: rgb(63, 59, 59);
   background-color: transparent;
   height: 40px;
   font-size: 15px;
@@ -142,64 +181,237 @@
   text-align: center;
   border: none;
   font-family: var(--e-global-typography-ce37b86-font-family), Sans-serif;
+  display: none;
+
 
   /* margin-right: 30px; */
 }
 
-.chairImage {
-  background-image: url(./09/three-seats-cozy-grey-sofa-PU2KRQE-300x300.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-color: white;
-}
 
-.tableImage {
-  background-image: url(./products/centretables/bakerrc2.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-color: white;
-}
 
-.deskImage {
-  background-image: url(./09/wooden-nightstand-KAPKELE-300x300.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-color: white;
-}
-
-.lampImage {
-  background-image: url(./thumbs/lamp.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-color: white;
-}
-
-.SideDrawerImage {
-  background-image: url(./products/benches/bench1-2.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-color: white;
-}
 
 .seconddivision {
-  width: 50%;
-  background-color: rgb(31, 31, 31);
-  height: 15rem;
-  text-align: center;
-  margin-top: 25px;
+  width: 100%;
+  background-color: rgb(244, 244, 244);
+  height: 12rem;
+  display: flex;
+  justify-content: space-around;
+  position: sticky;
+  flex-direction: row;
+  z-index: 1;
+  top: 1;
+  padding: 50px;
+  /* padding-left: 100px; */
+
+  h1{
+    text-transform: uppercase;
+  }
+
+  h3{
+    font-weight: lighter;
+    margin-top: 8px;
+  }
+
+  button{
+    width: 100px;
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+  }
+
+  img{
+  }
+
 }
 
-.seconddivision h4 {
-  position: absolute;
-  font-size: 50px;
-  color: wheat;
+.viewDetails{
+  padding-left: 20px;
 }
+
+.sectionImg{
+
+  width:40%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 
 .filter {
-  margin-left: 2%;
+  padding-left: 20px;
+  padding-right: 20px;
+/* display: flex;
+flex-direction: row-reverse; */
+}
+
+
+
+.cardContainer{
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 100px; */
+  
+
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  margin-top: 16px;
+  border-radius: 8px;
+  width: 70%;
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+
+ 
+
+  .cardImage{
+    background-color: rgb(240, 240, 240);
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}
+
+.cardHalf2{
+  width: 60%;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(115, 114, 114);
+  border-left: none;
+
+  p{
+    text-align: center;
+    h2{
+      color: black;
+      font-size: 30px;
+  
+    }
+    h3{
+      color: rgb(125, 120, 105);
+      font-style: italic;
+      font-size: 20px;
+    }
+
+  }
+ 
+
+  button{
+    background-color: black;
+    width: 120px;
+    border-radius: 20px;
+    color: white;
+    height: 40px;
+  }
+
+  p{
+    input{
+      background-color: transparent;
+      width: 120px;
+      color: black;
+      font-weight: bold;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid rgb(203, 203, 203);
+      padding: 5px;
+      text-align: center;
+
+    }
+  }
+}
+
+
+
+.cancel{
+  margin-left: 65%;
+  margin-top: 10px;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 360px;
+  padding: 5px;
+
+}
+
+.cancel:hover{
+  background-color: rgb(104, 89, 72);
+  color: whitesmoke;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .productBody {
+  }
+
+  .productContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cat{
+    background-color: rgb(252, 252, 252);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .productBody {
+  }
+
+  .mainHalf{
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: repeat(4, 1fr) !important; */
+    
+  }
+
+  .cat{
+    width: 100vw;
+    background-color: rgb(245, 245, 245);
+    height: 70px;
+
+   .buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-top: -10px !important; */
+   }
+  }
+
+  .sort{
+  }
+
+ 
+}
+
+
+
+@media screen and (max-width: 425px) {
+  .productBody {
+  }
+
+  .cat{
+    width: 100vw;
+  }
+  .productContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

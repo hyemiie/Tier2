@@ -1,8 +1,9 @@
 import React from "react";
 import "./About.css";
-import AbouImage from "../Images/Images/aboutImage.webp";
-import AboutImage from "../Images/Images/about5.jpeg"
+import AbouImage from "../Images/Images/about6.jpeg";
+import AboutImage from "../Images/Images/about7.jpeg"
 import { useSpring, animated } from "react-spring";
+import Footer from "./Footer";
 function About() {
   const SlideIn = useSpring({
     from: { transform: "translate3d(0px, -70px, -0px)", opacity: 0 },
@@ -19,44 +20,56 @@ function About() {
     <div className="all">
       <div className="About">
         <div className="secondSection">
-          <span className="SSpan">
-            <h3>Exclusive Design</h3>
+          <div className="messageDiv">
+            <h3>Why choose Us</h3>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam
-            animi illo officia asperiores hic quae inventore incidunLorem, ipsum dolor sit amet consectetur adipisicing elit. Totam
-            animi illo officia asperiores hic quae inventore incidun
-          </span>
+            animi illo officia asperiores hic quae inventore incidun.
+            <div className="aboutGrid">
+            <ul>
+              <li> * Lorem, ipsum dolor sit amet consectetur adipisicing elit. .</li>
+              <li> * Lorem, ipsum dolor sit amet consectetur adipisicing elit. .</li>
+              <li>* Lorem, ipsum dolor sit amet consectetur adipisicing elit. .</li>
+              <li>* Lorem, ipsum dolor sit amet consectetur adipisicing elit. .</li>
+              </ul>
+              <button>Shop now</button>
+
+            </div>
+          </div>
          
         </div>
-        <animated.img
+        <div className="imageDiv"><animated.img
           src={AbouImage}
           alt=""
           className="aboutImage"
           style={SlideIn}
-        />
-      </div>
-      <div className="About2">
+        /></div>
         
+      </div>
+      <div className="About about2">
         <div className="secondSection">
-          {/* <span className="Exclusive"> */}
-          <span className="SSpan">
-            <h3>Exclusive Design</h3>
+          <div className="messageDiv">
+            <h3>Why choose Us</h3>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam
-            animi illo officia asperiores hic quae inventore incidunLorem, ipsum dolor sit amet consectetur adipisicing elit. Totam
-            animi illo officia asperiores hic quae inventore incidun
-          </span>
+            animi illo officia asperiores hic quae inventore incidun.
+            <div className="aboutGrid">
+            <ul>
+              <li> * Lorem, ipsum dolor sit amet consectetur adipisicing elit. .</li>
+              <li> * Lorem, ipsum dolor sit amet consectetur adipisicing elit. .</li>
+              <li>* Lorem, ipsum dolor sit amet consectetur adipisicing elit. .</li>
+              <li>* Lorem, ipsum dolor sit amet consectetur adipisicing elit. .</li>
+              </ul>
+              <button>Shop now</button>
+            </div>
+          </div>
          
         </div>
-        {/* <div className="imgDiv">  */}
-        <animated.img
+        <div className="imageDiv"><animated.img
           src={AboutImage}
           alt=""
           className="aboutImage"
           style={SlideIn}
-        />
-                {/* <div className="aboutImg"> */}
-g
-        {/* </div> */}
-        {/* </div> */}
+        /></div>
+        
       </div>
     </div>
   );

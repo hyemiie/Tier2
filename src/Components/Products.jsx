@@ -10,8 +10,11 @@ import {
   faMagnifyingGlass,
   faBars,
   faArrowLeft,
+  faCancel,
+  faX,
 } from "@fortawesome/free-solid-svg-icons";
 import "./navbar.css";
+import sectionImage from "../Images/products/sideboard/fusion1.jpg"
 
 function Products() {
   var [products, setProducts] = useState([]);
@@ -19,6 +22,12 @@ function Products() {
   const [quantities, setQuantities] = useState({}); // Use an object to store individual quantities
   const [searchInput, setSearchInput] = useState("");
   const [searchResult, setSearchResult] = useState({});
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleProductClick = (product) => {
+    setSelectedProduct(product);
+    console.log(product);
+  };
 
   useEffect(() => {
     const getAPIData = async () => {
@@ -240,16 +249,65 @@ function Products() {
     }
   };
 
+  const ProductCard = ({ product }) => (
+    <div className="cardContainer">
+   
+    <div className="product-card">
+   
+    <div className="cardImage">
+    
+    <img
+        src={`http://localhost:5000${product.product_image}`}
+        alt=""
+        className="PImage"
+      /></div>
+
+      <div className="cardHalf2">
+      
+      <p><h2>{product.product_name} </h2>      <h3>By Tier</h3></p>
+
+      <p>{product.product_desc}</p>
+      
+     
+      <p>
+      <input
+        type="number"
+        name="Quantity"
+        id={`Quantity_${product.product_ID}`}
+        value={quantities[product.product_ID]}
+        onChange={(event) => handleChange(event, product.product_ID)}
+        min={0}
+        max={10}
+        className="qty"
+      />
+      </p>
+      <button onClick={() => handleAddToCart(product)} className="add">
+        Add to Cart
+      </button>
+      </div>
+      <button onClick={() => setSelectedProduct(null)} className="cancel"  >
+      <FontAwesomeIcon icon={faX} />
+    </button>
+    </div>
+    </div>
+  );
+
   return (
     <div className="productBody">
       <div className="seconddivision">
-        <h4>Tier/ Products</h4>
+      <div className="viewDetails">
+        <h1> Tier Product Section</h1>
+        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed <br></br>do eiusmod tempor incididunt ut labore et dolore magna aliqua</h3>
+        <button>View More</button>
+        </div>
+        <div className="sectionImg">
+          <img src={sectionImage} className="sectionImg"/>
+        </div>
         {/* <input type="search" name="" id="search" placeholder="Search..." /> */}
       </div>
 
       <div className="mainHalf">
         <div className="cat">
-          {/* <span className="sort"> SORT</span> */}
 
           <div className="filter">
             <div className="inputProduct">
@@ -268,43 +326,41 @@ function Products() {
               </button>
             </div>
 
-            <h3 className="productTitle">Product Categories</h3>
-            <span className="divider"></span>
+            {/* <span className="divider"></span> */}
+            {/* <span className="sort"> Shop by Categories</span> */}
+
             <span className="buttons">
-              <p>
+            
                 <button className="btn tableImage"></button>
                 <h3 id="productTag">Tables</h3>
-              </p>
-              <p>
-                {" "}
                 <button
                   className="btn chairImage "
                   onClick={showChairs}
                 ></button>
-                <h3 id="productTag">Chairs</h3>
-              </p>
-              <p>
-                <button className="btn deskImage" onClick={showDesks}></button>
-                <h3 id="productTag">Desks</h3>
-              </p>
-              <p>
+                <h3 id="productTag" onClick={showChairs}>Chairs</h3>
+           <button className="btn deskImage" onClick={showDesks}></button>
+                <h3 id="productTag" onClick={showDesks}>Desks</h3>
                 <button
                   className="btn lampImage"
                   onClick={showDrawers}
                 ></button>
-                <h3 id="productTag">Lamps</h3>
-              </p>
-              <p>
+                <h3 id="productTag"                   onClick={showDrawers}
+>Lamps</h3>
+           
                 <button className="btn SideDrawerImage"></button>{" "}
                 <h3 id="productTag">Side Tables</h3>
-              </p>
+             
             </span>
           </div>
         </div>
 
         <div className="productContainer">
           {products.map((product) => (
-            <div key={product.product_ID} className="productCard">
+            <div
+              key={product.product_ID}
+              className="productCard"
+              onClick={() => handleProductClick(product)}
+            >
               <div className="productImage">
                 <img
                   src={`http://localhost:5000${product.product_image}`}
@@ -318,16 +374,7 @@ function Products() {
                 <div className="productName">{product.product_name}</div>
 
                 <div className="productPrice">${product.product_price}</div>
-                <input
-                  type="number"
-                  name="Quantity"
-                  id={`Quantity_${product.product_ID}`}
-                  value={quantities[product.product_ID]}
-                  onChange={(event) => handleChange(event, product.product_ID)}
-                  min={0}
-                  max={10}
-                  className="qty"
-                />
+
                 <button
                   onClick={() => handleAddToCart(product)}
                   className="add"
@@ -339,7 +386,13 @@ function Products() {
           ))}
           <Drawers />
         </div>
+        {selectedProduct ? (
+        <ProductCard product={selectedProduct} className="viewProduct" />
+      ) : (
+        ""
+      )}
       </div>
+   
     </div>
   );
 }

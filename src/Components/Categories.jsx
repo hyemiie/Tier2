@@ -6,11 +6,33 @@ import Image4 from "./thumbs/nightstand.png";
 import Image5 from "./09/armchair-isolated-on-white-background-3d-rendering-P9MJ7CJ-300x300.png";
 import Image6 from "./09/three-seats-cozy-grey-sofa-PU2KRQE-300x300.png";
 import Image7 from "./09/wooden-table-on-white-background-P6CQMJC-300x300.png";
+import './Categories.css'
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Categories() {
+
+
+function Categories() { 
   return (
     <div>
-      <div className="categories">
+
+    <div className="productCategories">
+    <div className="images">
+<img src={Image1} alt="beds" class="img-responsive img" />
+{/* <FontAwesomeIcon icon={faArrowRight} className="imgIcon" /> */}
+
+<img src={Image5} alt="beds" class="img-responsive img" />
+{/* <FontAwesomeIcon icon={faArrowRight} className="imgIcon" /> */}
+
+<img src={Image3} alt="beds" class="img-responsive img" />
+{/* <FontAwesomeIcon icon={faArrowRight} className="imgIcon" /> */}
+
+<img src={Image4} alt="beds" class="img-responsive img" />
+
+</div>
+
+    </div>
+      {/* <div className="categories">
         <h3 className="categoryMessage">All Categories</h3>
         <div className="catImages">
           <div class="c">
@@ -27,7 +49,7 @@ function Categories() {
                 <img src={Image3} alt="beds" class="img-responsive" />
               </div>
               <span class="category-title">BedSide Tables</span>
-            </a>
+            </a>camer
           </div>
           <div class="c">
             <a href="beds.html">
@@ -62,7 +84,7 @@ function Categories() {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
