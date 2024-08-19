@@ -22,50 +22,46 @@ function Footer() {
       <div className="footerGrid">
         <div className="Firstsection">
           <h1>Tier</h1>
-          <div className="footerIcons">
-            <FontAwesomeIcon icon={faCamera} className="footIcon" />
-            <FontAwesomeIcon icon={faHome} className="footIcon" />
-            <FontAwesomeIcon icon={faCoffee} className="footIcon" />
-          </div>
+         
         </div>
 
         <div className="secSection">
+        <div className="ulArrangement">
+          
           <ul className="footerUL">
-            <h3>Useful Links</h3>
+            {/* <h3>Guides</h3> */}
             <li>
-              {" "}
               <Link to="/" className="footLink">
                 Home
               </Link>
             </li>
             <li>
-              {" "}
               <Link to="/about" className="footLink">
                 About Us
               </Link>
             </li>
             <li>
-              {" "}
               <Link to="/products" className="footLink">
                 Products
               </Link>
-            </li>{" "}
+            </li>
             <li>
-              {" "}
               <Link to="/" className="footLink">
                 Careers
               </Link>
-            </li>{" "}
+            </li>
             <li>
-              {" "}
               <Link to="/contact" className="footLink">
                 Contact Us
               </Link>
-            </li>{" "}
+            </li>
           </ul>
+
+       
+</div>
         </div>
 
-        <div className="fourthSection">
+        {/* <div className="fourthSection">
           <h2 className="subscribe">SUBSCRIBE</h2>
           <h3 className="subText">
             Enter your email to recieve weekly notifications <br />
@@ -76,10 +72,15 @@ function Footer() {
             <input type="text" />
             <FontAwesomeIcon icon={faEnvelope} className="subIcon" />
           </span>
-        </div>
+        </div> */}
       </div>
       <div className="copyright">
         <h3>2024 Tier.Inc All Rights Reserved</h3>
+        <div className="footerIcons">
+            <FontAwesomeIcon icon={faCamera} className="footIcon" />
+            <FontAwesomeIcon icon={faHome} className="footIcon" />
+            <FontAwesomeIcon icon={faCoffee} className="footIcon" />
+          </div>
       </div>
     </div>
   );

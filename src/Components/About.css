@@ -1,47 +1,62 @@
-.all {
-  padding-bottom: 100px;
+.all{
+  margin-top: 100px;
+   margin-bottom: 100px;
 }
 
 .About {
   display: flex;
   width: 100%;
   padding-top: 30px;
-  /* height: fit-content; */
+
+  h3{
+    font-weight: 350;
+    padding-top: 10px;
+
+  }
+
+  h2{
+    font-weight:400;
+    color: black;
+    /* padding-top: 10px; */
+
+  }
+
+  p{
+    font-weight: lighter;
+    padding-top: 10px;
+
+  }
+
+  button {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    transition: transform 3.5s ease-in-out, background-color 0.5s ease-in-out;
 }
 
-.about2 {
-  display: flex;
-  width: 100%;
-  flex-direction: row-reverse;
-
-  .secondSection {
-    padding: 100px;
-     width: 50%;
-     display: flex;
-     align-items:center;
-     justify-content:left;
-
-   }
-   
-
+button a {
+    color: black;
+    text-decoration: none;
 }
 
-.secondSection {
- padding: 100px;
- width: 50%;
- display: flex;
-  align-items: center;
-  justify-content: center;
+button:hover {
+    transform: scale(1.1); /* Scaling the button itself */
+    background-color: lightgray;
 }
 
-.messageDiv {
-  padding-left: 30px;
-  display: flex;
-  flex-direction: column;
-  width: 80%;
+button:hover a {
+    text-decoration: underline;
+    color: black;
+    font-weight: bold;
+}
+
 }
 .imageDiv{
-  width: 60%;
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,31 +64,40 @@
 
 .aboutImage {
   width: 60%;
-   z-index: 1;
+  z-index: 0;}
+
+
+  .messageDiv{
+    margin-top: 10%;
   }
 
-   .aboutGrid{
-    ul{
-       display: grid; 
-       grid-template-columns: repeat(2, 1fr); 
-      justify-content: space-between;
-      list-style:circle;
+  @media screen and (max-width:435px) {
+    
 
-    }
-   
-
-
-    li{
-      width: fit-content;
+    .About{
       display: flex;
-      padding: 10px;
-      list-style:circle;
+      flex-direction: column;
+
+      h2{
+        padding-left: 20px;
+      }
+      h3{
+        padding-left: 20px;
+      }
+
+      p{
+        padding: 20px;
+      }
+      button{
+        margin-left: 20px;
+      }
     }
-    button{
-      width: fit-content;
-      background-color: black;
-      color: wheat;
-      border-radius: 10px;
-      padding: 5px;
+
+    .imageDiv{
+      width: 100%;
     }
-   }
+
+    .aboutImage{
+      width: 90%;
+    }
+  }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import AbouImage from "../Images/Images/about6.jpeg";
+import AbouImage from "../Images/aboutSkin.png";
 import AboutImage from "../Images/Images/about7.jpeg"
 import { useSpring, animated } from "react-spring";
 import Footer from "./Footer";
@@ -19,59 +19,32 @@ function About() {
   return (
     <div className="all">
       <div className="About">
-        <div className="secondSection">
-          <div className="messageDiv">
-            <h3>Why choose Us</h3>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam
-            animi illo officia asperiores hic quae inventore incidun.
-            <div className="aboutGrid">
-            <ul>
-              <li> * Lorem, ipsum dolor sit amet consectetur adipisicing elit. .</li>
-              <li> * Lorem, ipsum dolor sit amet consectetur adipisicing elit. .</li>
-              <li>* Lorem, ipsum dolor sit amet consectetur adipisicing elit. .</li>
-              <li>* Lorem, ipsum dolor sit amet consectetur adipisicing elit. .</li>
-              </ul>
-              <button>Shop now</button>
 
-            </div>
-          </div>
-         
-        </div>
-        <div className="imageDiv"><animated.img
+      <div className="imageDiv"><animated.img
           src={AbouImage}
           alt=""
           className="aboutImage"
           style={SlideIn}
         /></div>
-        
-      </div>
-      <div className="About about2">
+
         <div className="secondSection">
           <div className="messageDiv">
-            <h3>Why choose Us</h3>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam
-            animi illo officia asperiores hic quae inventore incidun.
+            <h3>Skin Care</h3>
+            <h2>Potent Solutions for Demanding Skin</h2>
+
+            
             <div className="aboutGrid">
-            <ul>
-              <li> * Lorem, ipsum dolor sit amet consectetur adipisicing elit. .</li>
-              <li> * Lorem, ipsum dolor sit amet consectetur adipisicing elit. .</li>
-              <li>* Lorem, ipsum dolor sit amet consectetur adipisicing elit. .</li>
-              <li>* Lorem, ipsum dolor sit amet consectetur adipisicing elit. .</li>
-              </ul>
-              <button>Shop now</button>
+         <p>Discover products tailored for mature skin and urban lifestyles, offering daily hydration and the added advantage of powerful vitamins and antioxidants.</p>
+              <button> <a  href="/products">Shop now</a></button>
+
             </div>
           </div>
          
         </div>
-        <div className="imageDiv"><animated.img
-          src={AboutImage}
-          alt=""
-          className="aboutImage"
-          style={SlideIn}
-        /></div>
+       
         
       </div>
-    </div>
+      </div>
   );
 }
 

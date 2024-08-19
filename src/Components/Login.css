@@ -1,11 +1,105 @@
 .username {
   height: 50px;
-  font-size: 20px;
+  font-size: 17px;
   width: 80%;
   margin-bottom: 3%;
-  /* margin-top: 3%; */
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
 }
 
 .password {
-  margin-top: 0% !important;
+  height: 50px;
+  font-size: 17px;
+  width: 80%;
+  margin-bottom: 3%;
+  border: none;
+  border-bottom: 1px solid black;
+outline: none;
+}
+
+.contactDiv{
+  padding: 100px;
+}
+
+.contactFormHalf{
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100vw;
+  background-image: url('../Images/aboutSkin.png' );
+  margin-top: 120px;
+}
+
+
+.contactForm{
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.contactFormHalf{
+  width: 50%;
+}
+
+.contactBtn{
+  background-color: rgb(65, 60, 60);
+  color: white;
+  width: 80%;
+  height: 45px;
+  font-size: 12px;
+  margin-bottom: 30px;
+
+}
+
+.formTitle{
+  padding-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+@media screen and (max-width:768px) {
+  .contactForm{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .contactFormHalf{
+    height: 100%;
+    width: 100vw;
+    background-image: url('../Images/aboutSkin.png' );
+    margin-top: 140px;
+    background-position: center;
+    background-size: cover;
+    padding-left: 20px;
+  }
+
+
+  .contactDiv{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .contactSpan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+
+    input{
+      width: 90vw;
+    }
+
+  }
+  
+  
+  
 }

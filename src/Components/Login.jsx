@@ -2,12 +2,28 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import Footer from "./Footer";
-// import "./Login.css";
+import CustomAlert from "./CustomAlert";
+import "./Login.css";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [alertVisible, setAlertVisible] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
 
+
+  const navigate = useNavigate()
+
+  const showAlert = (message) => {
+    setAlertMessage(message);
+    setAlertVisible(true);
+  };
+
+  const handleAlertClose = () => {
+    setAlertVisible(false);
+    setAlertMessage('');
+  };
   const handleLogin = async (event) => {
     event.preventDefault();
     const data = {
@@ -16,17 +32,18 @@ function Login() {
     };
 
     try {
-      const response = await axios.post("http://localhost:5000/login", {
+      const response = await axios.post("https://tierfrontend2.onrender.com/login", {
         username,
         password,
       });
       localStorage.setItem("access_token", response.data.access_token);
-      // Redirect to protected route
       console.log(response.data.access_token);
-      alert("Login successful");
+      showAlert("Login successful");
+      navigate('/')
     } catch (error) {
       console.error(error);
-      // Display error message to user
+      showAlert("Login failed", error);
+
     }
   };
 
@@ -40,17 +57,15 @@ function Login() {
 
   return (
     <div className="contactUs">
+    {alertVisible && (
+        <CustomAlert message={alertMessage} onClose={handleAlertClose} />
+      )}
       <div className="contactForm">
         <div className="contactFormHalf">
-          <h2>Welcome Back!!</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            <br /> Quisquam veniam odio nulla laborum numquam
-            <br /> nihil iure expedita et aliquid explicabo!
-          </p>
         </div>
         <div className="contactDiv">
           <form method="post" className="contactSpan">
+          <h2 className="formTitle">Log in to your account</h2>
             <span className="label">
               <input
                 type="text"
@@ -89,6 +104,7 @@ function Login() {
         </div>
       </div>
       <Footer />
+      
     </div>
   );
 

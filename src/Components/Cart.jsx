@@ -1,198 +1,227 @@
-
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./cart.css";
+import "./Cart1.css";
 import image from "./09/undraw_bug_fixing_oc-7-a.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBicycle,
-  faBiking,
-  faCommentDollar,
-  faLaptop,
-  faPencil,
-  faTrash,
-  faTrophy,
-} from "@fortawesome/free-solid-svg-icons";
-import Footer from "./Footer";
+import { faTrash, faLaptop } from "@fortawesome/free-solid-svg-icons";
+import CustomAlert from "./CustomAlert";
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [quantities, setQuantities] = useState(1);
-  const [total, setTotal] = useState();
+  const [total, setTotal] = useState(0);
+  const [alertVisible, setAlertVisible] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
 
   useEffect(() => {
-    const fetchCartData = async () => {
-      setIsLoading(true);
-      setError(null);
-
-      try {
-        const response = await axios.get("http://localhost:5000/Cart", {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-          },
-        });
-        console.log("cart", response);
-
-        setCartItems(response.data.cart_items);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
     fetchCartData();
   }, []);
 
-  const handleDeleteFromCart = (productId) => {
-    axios
-      .delete("http://localhost:5000/api/cart/delete", {
-        params: { product_id: productId },
-      })
-      .then((response) => {
-        console.log("Product deleted from cart");
-        alert("Product Deleted from Cart");
-        console.log("response", response.data); // Display the server response message
-      })
-      .catch((error) => {
-        console.error(error);
+  useEffect(() => {
+    calculateTotal();
+  }, [cartItems]);
+
+  const showAlert = (message) => {
+    setAlertMessage(message);
+    setAlertVisible(true);
+  };
+
+  const handleAlertClose = () => {
+    setAlertVisible(false);
+    setAlertMessage('');
+  };
+
+  const fetchCartData = async () => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await axios.get("https://tierfrontend2.onrender.com/Cart", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        },
       });
+      console.log("cart", response);
+
+      setCartItems(response.data.cart_items);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  // const handleChange = (event, productId) => {
-  //   setQuantities({
-  //     ...quantities,
-  //     [productId]: Number(event.target.value),
-  //   });
-  // };
-
-  const updateQuantity = (event, productId) => {
-    setQuantities(Number(event.target.value));
-    console.log(quantities);
+  const handleDeleteFromCart = async (productId) => {
+    if (
+      window.confirm(
+        "Are you sure you want to remove this item from your cart?"
+      )
+    ) {
+      try {
+        await axios.delete("https://tierfrontend2.onrender.com/api/cart/delete", {
+          params: { product_id: productId },
+        });
+        setCartItems(cartItems.filter((item) => item.product_ID !== productId));
+        showAlert("Product Deleted from Cart");
+      } catch (error) {
+        console.error(error);
+        showAlert("Failed to delete product from cart");
+      }
+    }
   };
+
+  const updateQuantity = async (productId, newQuantity) => {
+    if (newQuantity < 1) return;
+
+    try {
+      await axios.put(
+        "https://tierfrontend2.onrender.com/api/cart/update",
+        {
+          product_id: productId,
+          quantity: newQuantity,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+          },
+        }
+      );
+      showAlert("Quantity updated succesfully");
+
+
+      setCartItems(
+        cartItems.map((item) =>
+          item.product_ID === productId
+            ? { ...item, product_Quantity: newQuantity }
+            : item
+        )
+      );
+    } catch (error) {
+      console.error(error);
+      showAlert("Failed to update quantity");
+    }
+  };
+
+  const calculateTotal = () => {
+    const newTotal = cartItems.reduce(
+      (acc, item) => acc + item.product_Price * item.product_Quantity,
+      0
+    );
+    setTotal(newTotal);
+  };
+
+  if (isLoading) {
+    return (
+      <div className="loader">
+        <span className="loader-text">Loading....</span>
+        <span className="load"></span>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="error">
+      <p className="errPage">
+        <img src={image} alt="" className="errImg" />
+        Oops...we don't have access to your records right now,
+        <a href="/login">  Please Log in</a>
+      </p>
+      </div>
+    );
+  }
+
+  const handleCheckOut = async (productId) => {
+ 
+      try {
+        await axios.post("https://tierfrontend2.onrender.com/checkoutSession", {
+          params: { product_id: productId },
+        });
+        // setCartItems(cartItems.filter((item) => item.product_ID !== productId));
+        showAlert("Initiating Cart session");
+      } catch (error) {
+        console.error(error);
+        showAlert("Failed to delete product from cart");
+      }
+    }
+  
+    
 
   return (
-    <div>
-      <div className="cartBody">
-        <div className="cartHalf">
-          {isLoading && (
-            <div class="loader">
-              <span class="loader-text">Loading....</span>
-              <span class="load"></span>
-            </div>
-          )}
-          {error && (
-            <p className="errPage">
-              <img src={image} alt="" srcset="" className="errImg" />
-          Oops...we dont have access to your records, Please Log in
-            </p>
-          )}
-          {cartItems.length > 0 && (
-            <ul>
-              {cartItems.map((item) => (
-                <li key={item.product_ID} className="cartLists">
-                  <div className="productImage">
-                    <img
-                      src={`http://localhost:5000${item.product_Img}`}
-                      alt=""
-                      className="cartImage"
-                    />
-                  </div>{" "}
-                  <div className="cartPName">
-                    {" "}
-                    {item.product_Name}
-                    <div className="cartPPrice">${item.product_Price}</div>
-                  </div>
-                  <div className="CartproductQty">
-                    <div>
-                      {" "}
+    <div className="allCart">
+     {alertVisible && (
+        <CustomAlert message={alertMessage} onClose={handleAlertClose} />
+      )}
+      <div className="cartHalf">
+        <div className="cartBody">
+          {cartItems.length > 0 ? (
+            <div className="cartDiv">
+              <ul className="cartUL">
+                <div className="listHeading">
+                  <h2>Cart</h2>
+                  <p>Purchase one of the sale products and receive free Shipping. Automatically applied during checkout</p>
+                </div>
+                {cartItems.map((item) => (
+                  <li key={item.product_ID} className="cartLists">
+                    <div className="CartproductImage">
+                      <img
+                        src={`https://tierfrontend2.onrender.com${item.product_Img}`}
+                        alt=""
+                        className="cartImage"
+                      />
+                      <div className="cartPName">
+                        <div className="productName">{item.product_Name}</div>
+                        <div className="cartPPrice">${item.product_Price}</div>
+                      </div>
+                    </div>
+                    <div className="cartPriceTotal">
+                      ${(item.product_Price * item.product_Quantity).toFixed(2)}
+                    </div>
+                    <div className="CartproductQty">
                       <input
                         type="number"
                         name="Quantity"
-                        min={0}
+                        min={1}
                         max={10}
                         className="qty"
-                        onClick={updateQuantity}
                         value={item.product_Quantity}
+                        onChange={(e) =>
+                          updateQuantity(
+                            item.product_ID,
+                            parseInt(e.target.value)
+                          )
+                        }
                       />
                     </div>
-
-                    <div>
-                      {" "}
-                      <FontAwesomeIcon icon={faPencil} className="QtyIcon" />
+                    <div className="cartDel">
+                      <FontAwesomeIcon
+                        icon={faTrash}
+                        onClick={() => handleDeleteFromCart(item.product_ID)}
+                      />
                     </div>
-                  </div>
-                  <div className="cartPriceTotal">
-                    ${item.product_Price * item.product_Quantity}
-                  </div>
-                  <div
-                    className="cartDel"
-                    onClick={() => handleDeleteFromCart(item.product_ID)}
-                  >
-                    <FontAwesomeIcon icon={faTrash} />
-                  </div>
-                </li>
-              ))}
-            </ul>
+                  </li>
+                ))}
+              </ul>
+              <div className="total">
+                <div className="totalDiv">
+                  <h2 className="subTotal">SubTotal</h2>
+                  <h2 className="subTotalPrice">${total.toFixed(2)}</h2>
+                </div>
+                <button className="checkOut">
+                  <FontAwesomeIcon icon={faLaptop} />
+                  <a href="/error">                  Check Out
+</a>
+                </button>
+              </div>
+            </div>
+          ) : (
+            <p>Your cart is empty</p>
           )}
-          {cartItems.length === 0 && <p></p>}
-        </div>
-        <div className="cartSummary">
-          <div className="summaryContent">
-            <h2>Summary </h2>
-
-            <div className="summaryQuestions">
-              <div className="subTotal">
-                <span className="span1">SubTotal</span>{" "}
-                <span className="span2">$0</span>
-              </div>
-              <div className="subTotal">
-                <span className="span1"> Shipping Fee</span>{" "}
-                <span className="span2">$0</span>
-              </div>
-              <div className="subTotal">
-                <span className="span1"> Shipping Fee</span>{" "}
-                <span className="span2">$0</span>
-              </div>
-            </div>
-
-            <div className="SumTotal">
-              <span className="Totalspan1">Total</span>
-              <input
-                type="text"
-                name=""
-                id=""
-                value="$0"
-                disabled
-                className="Totalspan2"
-              />
-            </div>
-
-            <div className="summaryBtns">
-              <button className="checkOut">
-                <FontAwesomeIcon icon={faLaptop} />
-                Check Out
-              </button>
-              <button className="payDelivery">
-                <FontAwesomeIcon icon={faBiking} />
-                Pay on Delivery
-              </button>
-            </div>
-
-            <div className="summaryNote">
-              <h3>Note:</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dignissimos labore ex laboriosam cupiditate nobis facere.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   );
 }
+
 export default Cart;

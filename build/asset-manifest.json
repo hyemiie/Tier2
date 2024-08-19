@@ -1,20 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.5f0efaaf.css",
-    "main.js": "/static/js/main.5aee0da8.js",
+    "main.css": "/static/css/main.fde4bdc9.css",
+    "main.js": "/static/js/main.b9842da8.js",
     "static/js/787.a4b45000.chunk.js": "/static/js/787.a4b45000.chunk.js",
-    "static/media/vecteezy_modern-living-room-design-illustration-ai-generative_23902309.jpg": "/static/media/vecteezy_modern-living-room-design-illustration-ai-generative_23902309.32543f4529bfcac81053.jpg",
+    "static/media/skinHero1.png": "/static/media/skinHero1.986903c27752a5f546f7.png",
+    "static/media/jaconda-17.gif": "/static/media/jaconda-17.4b1b87e8c4834a96c298.gif",
+    "static/media/aboutSkin.png": "/static/media/aboutSkin.5c5f14550c9ab2904c3b.png",
     "static/media/Image8.png": "/static/media/Image8.6143dc7d52eb4c3316a4.png",
-    "static/media/cinsofa2.jpg": "/static/media/cinsofa2.665db45c4512f31bd180.jpg",
-    "static/media/bartlett2.jpg": "/static/media/bartlett2.811536894740a266f9bd.jpg",
-    "static/media/baker2.jpg": "/static/media/baker2.d346d005b3a533785ae0.jpg",
+    "static/media/wooden.png": "/static/media/wooden.c551f731ff10fe9f930f.png",
+    "static/media/Slice 11.png": "/static/media/Slice 11.6d6977e1dd6c16a2ef8e.png",
+    "static/media/lamp.png": "/static/media/lamp.90a6e17c6a52cfbf4094.png",
+    "static/media/darkModeBackground.webp": "/static/media/darkModeBackground.2c341558f6c64257de0e.webp",
+    "static/media/Eave Desk.jpeg": "/static/media/Eave Desk.c32bee2decc70c3e4013.jpeg",
+    "static/media/undraw_bug_fixing_oc-7-a.svg": "/static/media/undraw_bug_fixing_oc-7-a.a6daa5aa279adfefb5c16a7f3c2f0ddd.svg",
+    "static/media/dukesofa2.jpg": "/static/media/dukesofa2.58ea03eb29f01939c517.jpg",
+    "static/media/product (1).png": "/static/media/product (1).ae4a098e24fa103e0692.png",
+    "static/media/product (3).png": "/static/media/product (3).4e877e7ba5402416dff0.png",
+    "static/media/product (4).png": "/static/media/product (4).3ff844d0ef91c43e8b72.png",
+    "static/media/product (5).png": "/static/media/product (5).5e78575ec41cfa6de09a.png",
+    "static/media/product (2).png": "/static/media/product (2).ab93ac67ee03b6b08186.png",
     "index.html": "/index.html",
-    "main.5f0efaaf.css.map": "/static/css/main.5f0efaaf.css.map",
-    "main.5aee0da8.js.map": "/static/js/main.5aee0da8.js.map",
+    "main.fde4bdc9.css.map": "/static/css/main.fde4bdc9.css.map",
+    "main.b9842da8.js.map": "/static/js/main.b9842da8.js.map",
     "787.a4b45000.chunk.js.map": "/static/js/787.a4b45000.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f0efaaf.css",
-    "static/js/main.5aee0da8.js"
+    "static/css/main.fde4bdc9.css",
+    "static/js/main.b9842da8.js"
   ]
 }

@@ -3,11 +3,27 @@ import axios from "axios";
 import { useState } from "react";
 import "./Login.css";
 import Footer from "./Footer";
+import CustomAlert from "./CustomAlert";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [alertVisible, setAlertVisible] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+
+  const navigate = useNavigate()
+
+  const showAlert = (message) => {
+    setAlertMessage(message);
+    setAlertVisible(true);
+  };
+
+  const handleAlertClose = () => {
+    setAlertVisible(false);
+    setAlertMessage('');
+  };
   const handleRegisteration = (event) => {
     event.preventDefault();
     const data = {
@@ -16,14 +32,17 @@ function Register() {
     };
 
     axios
-      .post("http://localhost:5000/register", data)
+      .post("https://tierfrontend2.onrender.com/register", data)
       .then(() => {
         console.log("User Registered");
-        alert("Registeration Successful");
+        showAlert("Registeration successful");
         // Update UI with success message, if needed
       })
+      navigate("/login")
       .catch((error) => {
         console.error(error);
+        showAlert("Registeration failed", error);
+
       });
 
     console.log(username);
@@ -44,14 +63,12 @@ function Register() {
 
   return (
     <div className="contactUs">
+        {alertVisible && (
+        <CustomAlert message={alertMessage} onClose={handleAlertClose} />
+      )}
       <div className="contactForm">
         <div className="contactFormHalf">
-          <h2>Welcome!!!</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            <br /> Quisquam veniam odio nulla laborum numquam
-            <br /> nihil iure expedita et aliquid explicabo!
-          </p>
+          
         </div>
         <div className="contactDiv">
           <form method="post" className="contactSpan">
