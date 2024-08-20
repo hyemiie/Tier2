@@ -1,0 +1,50 @@
+.homeProducts{
+    padding: 10px;
+    padding-bottom: 100px;
+}
+
+
+.productGrid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    img{
+        width: 90%;
+    }
+}
+
+.productTexts{
+    padding: 20px;
+
+    h1{
+        font-weight: lighter;
+        margin-bottom: 20px;
+        font-size: 22px;
+
+    }
+
+    h2{
+        font-weight: lighter;
+        font-size: 15px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .homeImg{
+        width: 520px;
+    }
+
+    .productGrid{
+        /* display: grid;
+        grid-template-ro: repeat(1, 1fr); */
+        display: flex;
+        flex-direction: row;
+        overflow: scroll;
+    
+        img{
+            width: 200px;
+        }
+    }
+    
+}

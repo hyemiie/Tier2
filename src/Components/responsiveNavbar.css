@@ -1,0 +1,71 @@
+@media screen and (max-width:850px) {
+
+    .navbar{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 98vw;
+    }
+
+    .links{
+        display: none;
+    }
+
+  .sideL{
+    display: block;
+  }
+
+    .leftbars{
+        display: inline;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+      
+        button{
+          width: 40px;
+          height: 40px;
+          margin-left: 10px;
+          background-color: transparent;
+          border: none;
+      
+      
+          .icon{
+            font-size: 17px;
+            color: black;
+          }
+        }
+      } 
+    
+
+    .logo{
+    }
+
+    .rbars{
+        display: none;
+    }
+
+
+    .sideBar{
+
+      .sideMenu{
+        width: 50%;
+        z-index: 0;
+
+      }
+    }
+    
+}
+
+
+
+
+@media screen and (max-width:450px) {
+
+  .sideBar{
+
+
+    .sideMenu{
+      width: 100%;
+    }
+  }
+  
+}

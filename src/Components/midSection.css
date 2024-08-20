@@ -1,0 +1,38 @@
+.midSec{
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #E8E8DD;
+}
+.homeLists{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h2{
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 16px;
+
+  }
+
+  p{
+    font-weight: lighter;
+  }
+}
+
+@media screen and (max-width:435px) {
+
+  .homeLists{
+    /* font-size: 20px !important; */
+
+  }
+
+  .midSecP{
+    font-size: 12px;
+    text-align: center;
+  }
+  
+}

@@ -1,0 +1,21 @@
+.mainPage{
+    /* background-color: black; */
+    height: 100vh;
+    background-image:url('../Images/skinHero1.png') ;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+@media screen and (max-width:650px){
+    .mainPage{
+        background-image:url('../Images/skinHero1.png');
+        background-repeat: no-repeat;
+        height: 60vh;
+        background-position: top;
+        background-size: cover;
+
+    }
+    
+}

@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin:0;
+}
+
+.heroSection{
+    /* background-image: url('../Images/Images/home1.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center; */
+     
+    /* background-color: aqua; */
+    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    width: 100vw !important;
+}
+
+.heroImg{
+   display: flex;
+   height: 100vh;
+
+width: 100%;   /* padding: 50px; */
+   /* padding: 10px; */
+
+.imgDiv{
+    background-color: plum;
+    width: 100%;
+    padding-top: 20px;
+    background-image: url("../Images/skinHero1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.Discover
+{
+    /* background-color: yellow; */
+    margin-bottom: 20%;
+    position: absolute;
+    
+}
+
+}
+
+.heroImg{
+    width: 100% !important;
+}
+
+@media screen and (max-width:780px){
+    .heroImg{
+        width: 100vw !important;
+    }
+
+    .heroSection{
+        /* width: 320px !important; */
+    }
+    
+}
